@@ -9,6 +9,7 @@
 			<li><a href="Usuarios.php"><img src='./css/images/perfil.jpg'> <?php echo($_SESSION['config']['usuario']);?></a></li>
 			<li><a href="TipoDirecionamento.php">Direcionamento</a></li>
 			<li><a href="TipoAtendimento.php">Tipo Atendimento</a></li>						
+			<li><a href="TipoResposta.php">Tipo Resposta</a></li>									
 			<!-- 
 			<li><a href="Tempo.php"><img src='./css/images/tempo.png'> Tempo</a></li>			
 			<li><a href="Prioridades.php"><img src='./css/images/prioridade.png'> Prioridade</a></li>

@@ -95,8 +95,7 @@ class TbTipoAtendimento extends Banco
 	{
 		
 		$query = ("SELECT at_codigo, at_descricao,  
-					    (CASE WHEN at_ativo = 1 THEN 'ATIVO' ELSE 'INATIVO' END),
-					    $this->at_texto_padrao
+					    (CASE WHEN at_ativo = 1 THEN 'ATIVO' ELSE 'INATIVO' END)
 					FROM tb_tipo_atendimento");
 		
 		try 

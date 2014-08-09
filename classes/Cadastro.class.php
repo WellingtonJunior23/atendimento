@@ -763,18 +763,31 @@ class Cadastro extends Dados
 		}
 
 	}
+	
+	public function cadastrarTipoResposta()
+	{
+	
+		try{
+	
+			ValidarCampos::campoVazio($this->dados['tir_titulo'],'Titulo');
+			ValidarCampos::campoVazio($this->dados['tir_descricao'],'Texto Padrão');
+			ValidarCampos::campoVazio($this->dados['at_codigo'],'Tipo de Atendimento');
+	
+			try{
+			
+				$tbTipoResposta = new TbTipoResposta();
+				$tbTipoResposta->insert($this->dados);
+	
+			} catch (PDOException $e){
+				throw new PDOException($e->getMessage(), $e->getCode());
+			  }
+	
+	
+		} catch (Exception $e){
+			throw new Exception($e->getMessage(), $e->getCode());
+		  }
+	
+	}
 
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-

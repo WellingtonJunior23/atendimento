@@ -18,7 +18,7 @@ Arquivo::includeForm();
 
 $tbTipoAtendimento = new TbTipoAtendimento();
 
-$datagrid = new DataGrid(array('Tipo de Atendimento','Status','Texto Padrão'),$tbTipoAtendimento->listarAtendimento());
+$datagrid = new DataGrid(array('Tipo de Atendimento','Status'),$tbTipoAtendimento->listarAtendimento());
 $datagrid->colunaoculta = 1;
 
 $datagrid->acao = 'alterar/TipoAtendimento';

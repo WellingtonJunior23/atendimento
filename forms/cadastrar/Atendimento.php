@@ -73,6 +73,18 @@ Sessao::validarForm('cadastrar/Atendimento');
 		?>
       </td>
     </tr>
+    
+    <tr>
+      <th width="119" align="left" nowrap="nowrap">Tipos de Resposta:</th>
+      <td>
+		<?php 
+		$tbTipoResposta = new TbTipoResposta();
+		FormComponente::$name = 'Selecione';
+		FormComponente::selectOption('tir_codigo',$tbTipoResposta->listarRepostaPadrao(1),true,$_SESSION['cadastrar/Atendimento']);
+		?>
+      </td>
+    </tr>    
+    
     <tr>
       <th align="left" nowrap="nowrap">Direcionar Para:</th>
 	      <td>

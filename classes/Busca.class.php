@@ -449,6 +449,25 @@ class Busca extends Dados
 		  }
 	}
 	
+	public function listarTipoResposta()
+	{
+	
+		try{
+				
+			$tbTipoResposta = new TbTipoResposta();
+			
+			$this->dados['at_codigo'] = ($this->dados['at_codigo'] == '') ? '%' : $this->dados['at_codigo'];
+	
+			#Pega o Resultado
+			$dados = $tbTipoResposta->listarTipoResposta($this->dados);
+	
+			return($dados);
+	
+		} catch (Exception $e){
+		throw new Exception($e->getMessage(),$e->getCode());
+		}
+	}
+	
 	
 }
 ?>

@@ -50,8 +50,21 @@ $direcionar("#limparFiltros").click(function(){
 	$direcionar('select[name="ta_codigo"]').change(function(){
 	
 		var codigo_id = $direcionar("select[name='ta_codigo']").val();
+		$direcionar.post('meustiposderespostas.php',
+				{at_codigo: codigo_id},
+				function(data){
+					$direcionar("select[name='tir_codigo']").html(data);
+					$direcionar("textarea[name='at_descricao']").html('');
+				},
+		'html');				
+		return false;
+	});
+	
+	$direcionar('select[name="tir_codigo"]').change(function(){
+		
+		var codigo_id = $direcionar("select[name='tir_codigo']").val();
 		$direcionar.post('carregarResposta.php',
-				{novo_codigo: codigo_id},
+				{tir_codigo: codigo_id},
 				function(data){
 					$direcionar("textarea[name='at_descricao']").html(data);
 				},

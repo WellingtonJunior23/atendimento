@@ -17,7 +17,7 @@ Sessao::validarForm('cadastrar/TipoAtendimento');
     <tr>
       <th width="119" align="left" nowrap="nowrap">Descrição:</th>
       <td>
-      	<input name="at_descricao" type="text" value="<?php echo($_SESSION['cadastrar/TipoAtendimento']['at_descricao']); ?>" />
+      	<input size="50" name="at_descricao" type="text" value="<?php echo($_SESSION['cadastrar/TipoAtendimento']['at_descricao']); ?>" />
       </td>
     </tr>
     <tr>
@@ -29,14 +29,7 @@ Sessao::validarForm('cadastrar/TipoAtendimento');
 	      	?>
 	      </td>
     </tr>
-    
-    <tr>
-      <th width="119" align="left" nowrap="nowrap">Texto padrão:</th>
-      <td>
-		<textarea name="at_texto_padrao" rows="5" cols="20"><?php echo($_SESSION['cadastrar/TipoAtendimento']['at_texto_padrao']);?></textarea>
-      </td>
-    </tr>
-    
+        
     <tr>
       <td colspan="2" align="right">
 	      <input type="submit" name="cadastrar" id="button" value="Salvar" />
