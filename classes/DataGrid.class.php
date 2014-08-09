@@ -239,11 +239,26 @@ class DataGrid
 	 * @example Metodo que mostra a tabela na tela, chamando todos
 	 * os metodos anteriores
 	 */
-	public function mostrarDatagrid()
+	public function mostrarDatagrid($mostrar=0)
 	{
-		self::criaCabecalho();
-		self::criaTabela();
-		self::criaRodape();
+		if($mostrar == 0)
+		{
+			if($_SESSION['acao'])
+			{
+				
+			
+			}else 
+			{	
+				self::criaCabecalho();
+				self::criaTabela();
+				self::criaRodape();
+			}
+		}else
+		{
+			self::criaCabecalho();
+			self::criaTabela();
+			self::criaRodape();
+		}
 	}
 }
 ?>

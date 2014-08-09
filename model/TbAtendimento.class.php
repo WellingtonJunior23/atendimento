@@ -424,7 +424,36 @@ class TbAtendimento extends Banco
 		}
 		
 	}
+
+	#Atendimento pos Tipo de Atendimento e Status, seleciodados por data
+	public function listarAtendimentoPorTipoStatus($dados)
+	{
 	
+		$query = ("SELECT count(*) AS Quantidade, TA.at_descricao AS TipoAtendimento, SAT.sat_descricao AS STATUS
+						FROM tb_atendimento AS ATE
+						INNER JOIN tb_tipo_atendimento AS TA
+						ON ATE.ta_codigo = TA.at_codigo
+						INNER JOIN tb_status_atendimento AS SAT
+						ON ATE.sat_codigo = SAT.sat_codigo
+						WHERE at_data_cadastro >= ? 
+						AND at_data_cadastro <= ?
+						GROUP BY ATE.ta_codigo, SAT.sat_codigo
+						ORDER BY TA.at_descricao;
+				");
+	
+		try{
+			$stmt = $this->conexao->prepare($query);
+				
+			$stmt->execute(array("{$dados['dataUm']}",
+								 "{$dados['dataDois']}"));
+				
+			return($stmt);
+				
+		} catch (PDOException $e){
+			throw new PDOException($e->getMessage(), $e->getCode());
+		  }
+	
+	}
 	
 }
 ?>

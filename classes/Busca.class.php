@@ -428,6 +428,27 @@ class Busca extends Dados
 
 	}
 	
+	public function getRelatorioTipoAtendimentoStatus()
+	{
+	
+		try{
+			
+		#Instacia da classe Solicitacao
+		$tbAtendimento = new TbAtendimento();
+			
+		$this->dados['dataUm'] = ($this->dados['dataUm'] == '') ? $tbAtendimento->getMenorDataFinalizado() : ValidarDatas::dataBanco($this->dados['dataUm']);
+		$this->dados['dataDois'] = ($this->dados['dataDois'] == '') ? date('Y-m-d') : ValidarDatas::dataBanco($this->dados['dataDois']);
+		
+		#Pega o Resultado
+		$dados = $tbAtendimento->listarAtendimentoPorTipoStatus($this->dados);
+	
+		return($dados);
+	
+		} catch (Exception $e){
+			throw new Exception($e->getMessage(),$e->getCode());
+		  }
+	}
+	
 	
 }
 ?>

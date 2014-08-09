@@ -66,7 +66,7 @@ $_SESSION['cadastrar/Atendimento'] = $tbAtendimento->getForm(base64_decode($_SES
     <tr>
       <th width="119" align="left" nowrap="nowrap">Medicamento:</th>
       <td>
-		<input type="text" name="at_medicamento" value="<?php echo($_SESSION['cadastrar/Atendimento']['at_medicamento']); ?>">
+   		<textarea name="at_medicamento" id="areatexto" rows="5" cols="50"><?php echo($_SESSION['cadastrar/Atendimento']['at_medicamento']); ?></textarea>		
       </td>
     </tr>                                          
                             
