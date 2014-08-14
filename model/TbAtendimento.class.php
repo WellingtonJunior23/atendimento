@@ -129,7 +129,7 @@ class TbAtendimento extends Banco
 				");
 		*/
 		
-		$query = ("SELECT ATE.at_codigo, date_format(at_data_cadastro,'%d/%m/%Y') AS at_data_cadastro,
+		$query = ("SELECT ATE.at_codigo, date_format(at_data_cadastro_real,'%d/%m/%Y %H:%i:%s') AS at_data_cadastro,
 						  date_format(at_data_retorno,'%d/%m/%Y') AS at_data_retorno, SAT.sat_descricao, 
 					      TA.at_descricao, at_paciente, concat(USU.usu_nome,' ', USU.usu_sobrenome)
 					FROM tb_atendimento AS ATE
