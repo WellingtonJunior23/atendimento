@@ -2,6 +2,9 @@
 $tbAtendimento = new TbAtendimento();
 
 $_SESSION['cadastrar/Atendimento'] = $tbAtendimento->getForm(base64_decode($_SESSION['valorform']));
+
+
+
 ?>
 <fieldset>
 <legend>Apontamento</legend>
@@ -170,7 +173,7 @@ $_SESSION['cadastrar/Atendimento'] = $tbAtendimento->getForm(base64_decode($_SES
   </table>
 </form>
 <hr>
-  	<?php 
+  	<?php
   	try
   	{
 	  	$tbApontamento = new TbApontamento();
@@ -182,7 +185,7 @@ $_SESSION['cadastrar/Atendimento'] = $tbAtendimento->getForm(base64_decode($_SES
 	  	$grid->colunaoculta = 1;
 	  	$grid->titulofield = 'Apontamento(s)';
 	  	$grid->islink = false;
-	  	$grid->mostrarDatagrid();
+	  	$grid->mostrarDatagrid(1);
 	  	
   	}catch (Exception $e)
   	{
