@@ -80,14 +80,14 @@ $_SESSION['pdf/Atendimento'] = $busca->getRelatorioAtendimentoPDF();
     </tr>
 
         <tr>
-      <th width="119" align="left" nowrap="nowrap">Processo:</th>
+      <th width="119" align="left" nowrap="nowrap">Processo / Protocolo:</th>
       <td>
 		<?php echo($_SESSION['pdf/Atendimento']['at_processo']); ?>
       </td>
     </tr>                         
                         
     <tr>
-      <th width="119" align="left" nowrap="nowrap">Medicamento:</th>
+      <th width="119" align="left" nowrap="nowrap">Produto:</th>
       <td>
       	<div>
 		<?php echo($_SESSION['pdf/Atendimento']['at_medicamento']); ?>

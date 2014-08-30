@@ -18,8 +18,8 @@
 		$controleacesso->permitirBotao($botaoOperacao, array(ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
 		
 		
-		//$botaoprojeto = ("<li><a href='Projetos.php'><img src='./css/images/projeto.png'> Projetos</a></li>");					
-		//$controleacesso->permitirBotao($botaoprojeto, array(ControleDeAcesso::$TecnicoADM));
+		$botaoprojeto = ("<li><a href='AtendimentoAnalitico.php'><img src='./css/images/ocorrencia.png'> Atendimento Analitico</a></li>");					
+		$controleacesso->permitirBotao($botaoprojeto, array(ControleDeAcesso::$TecnicoADM));
 		
 		//$botaocklist = ("<li><a href='ExecutarCheckList.php'><img src='./css/images/ck.png'> CheckList</a></li>");
 		//$controleacesso->permitirBotao($botaocklist, array(ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));						

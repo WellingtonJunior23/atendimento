@@ -50,14 +50,14 @@ Sessao::validarForm('cadastrar/Atendimento');
     </tr> 
     
     <tr>
-      <th width="119" align="left" nowrap="nowrap">Processo:</th>
+      <th width="119" align="left" nowrap="nowrap">Processo / Protocolo:</th>
       <td>
 		<input type="text" name="at_processo" value="<?php echo($_SESSION['cadastrar/Atendimento']['at_processo']); ?>">
       </td>
     </tr>                         
                         
     <tr>
-      <th width="119" align="left" nowrap="nowrap">Medicamento:</th>
+      <th width="119" align="left" nowrap="nowrap">Produto:</th>
       <td>
 		<textarea name="at_medicamento" id="areatexto" rows="5" cols="50"><?php echo($_SESSION['cadastrar/Atendimento']['at_medicamento']); ?></textarea>
       </td>

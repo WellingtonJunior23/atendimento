@@ -6,8 +6,8 @@ ControleDeAcesso::permitirAcesso(array(ControleDeAcesso::$TecnicoADM));
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/script.php");
 
 echo"<div class='sub_menu_principal'>";
-echo FormComponente::actionButton('<img src="./css/images/novo.png" title="Novo Departamento"  >','cadastrar/TipoResposta');
-Texto::criarTitulo("Tipo de Resposta");
+echo FormComponente::actionButton('<img src="./css/images/novo.png" title="Novo Departamento"  >','cadastrar/TipoApontamento');
+Texto::criarTitulo("Tipo de Apontamento");
 echo "</div>";
 
 $busca = new Busca();
@@ -42,10 +42,10 @@ Arquivo::includeForm();
 
 
 
-$datagrid = new DataGrid(array('Tipo de Atendimento','Titulo','Texto Padrão','Status'),$busca->listarTipoResposta());
+$datagrid = new DataGrid(array('Tipo de Apontamento','Titulo','Texto Padrão','Status'),$busca->listarTipoApontamento());
 $datagrid->colunaoculta = 1;
 
-$datagrid->acao = 'alterar/TipoResposta';
+$datagrid->acao = 'alterar/TipoApontamento';
 
 $datagrid->mostrarDatagrid();
 

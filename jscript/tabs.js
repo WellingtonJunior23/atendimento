@@ -71,6 +71,18 @@ $direcionar("#limparFiltros").click(function(){
 		'html');				
 		return false;
 	});
+	
+	$direcionar('select[name="tap_codigo"]').change(function(){
+		
+		var codigo_id = $direcionar("select[name='tap_codigo']").val();
+		$direcionar.post('carregarApontamento.php',
+				{tap_codigo: codigo_id},
+				function(data){
+					$direcionar("textarea[name='ap_descricao']").html(data);
+				},
+		'html');				
+		return false;
+	});
 
 })(jQuery);
 

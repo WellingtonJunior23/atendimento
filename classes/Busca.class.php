@@ -312,6 +312,36 @@ class Busca extends Dados
 
 	}
 
+	#Utilizado na tela de Atendimento Analitico
+	public function listarAtendimentoAnalitico()
+	{
+	
+		try
+		{
+			
+			#Instancia da Tabela de Atendimento
+			$tbAtendimento = new TbAtendimento();
+		
+			$this->dados['sat_codigo'] = ($this->dados['sat_codigo'] == '') ? '%' : $this->dados['sat_codigo'];
+			$this->dados['ta_codigo'] =  ($this->dados['ta_codigo_busca'] == '') ? '%' : $this->dados['ta_codigo_busca'];
+		
+			$this->dados['data1'] = ($this->dados['data1'] == '') ? ValidarDatas::dataAnterior(date('d-m-Y'), -1) : $this->dados['data1'];
+			$this->dados['data2'] = ($this->dados['data2'] == '') ? date('Y-m-d') : ValidarDatas::dataBanco($this->dados['data2']);
+	
+			$this->dados['data1'] = ValidarDatas::dataBanco($this->dados['data1']);
+			
+			
+			$dados = $tbAtendimento->relatorioAtendimentoAnalitico($this->dados);
+	
+			return($dados);
+	
+	
+	} catch (Exception $e){
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	
+	}
+	
 	#Utilizado na tela de BuscaAtendimento
 	public function listarBuscaAtendimento()
 	{
@@ -463,6 +493,25 @@ class Busca extends Dados
 	
 			return($dados);
 	
+		} catch (Exception $e){
+		throw new Exception($e->getMessage(),$e->getCode());
+		}
+	}
+	
+	public function listarTipoApontamento()
+	{
+	
+		try{
+	
+ 			$tbTipoApontamento = new TbTipoApontamento();
+				
+			$this->dados['at_codigo'] = ($this->dados['at_codigo'] == '') ? '%' : $this->dados['at_codigo'];
+	
+			#Pega o Resultado
+			$dados = $tbTipoApontamento->listarTipoApontamento($this->dados);
+
+			return($dados);
+ 
 		} catch (Exception $e){
 		throw new Exception($e->getMessage(),$e->getCode());
 		}

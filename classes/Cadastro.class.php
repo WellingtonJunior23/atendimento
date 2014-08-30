@@ -789,5 +789,30 @@ class Cadastro extends Dados
 	
 	}
 
+	public function cadastrarTipoApontamento()
+	{
+	
+		try{
+	
+			ValidarCampos::campoVazio($this->dados['tap_titulo'],'Titulo');
+			ValidarCampos::campoVazio($this->dados['tap_descricao'],'Texto Padrão');
+			ValidarCampos::campoVazio($this->dados['at_codigo'],'Tipo de Atendimento');
+	
+			try{
+					
+				$tbTipoApontamento = new TbTipoApontamento();
+				$tbTipoApontamento->insert($this->dados);
+	
+			} catch (PDOException $e){
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+	
+	
+		} catch (Exception $e){
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	
+	}
+	
 }
 ?>

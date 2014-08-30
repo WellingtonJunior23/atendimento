@@ -179,6 +179,46 @@ class TbAtendimento extends Banco
 	}
 	
 	#Listagem da tela principal de atendimento
+	public function relatorioAtendimentoAnalitico($dados)
+	{
+	
+		$query = ("SELECT ATE.at_codigo, date_format(at_data_cadastro_real,'%d/%m/%Y %H:%i:%s') AS at_data_cadastro,
+						  date_format(at_data_retorno,'%d/%m/%Y') AS at_data_retorno, SAT.sat_descricao,
+					      TA.at_descricao, at_paciente, concat(USU.usu_nome,' ', USU.usu_sobrenome)
+					FROM tb_atendimento AS ATE
+					INNER JOIN tb_status_atendimento AS SAT
+					ON ATE.sat_codigo = SAT.sat_codigo
+					INNER JOIN tb_tipo_atendimento AS TA
+					ON ATE.ta_codigo = TA.at_codigo
+					INNER JOIN tb_usuario AS USU
+					ON ATE.usu_codigo = USU.usu_codigo
+					INNER JOIN tb_tipo_direcionamento AS TD
+					ON ATE.td_codigo = TD.td_codigo
+					WHERE ATE.sat_codigo LIKE ?
+					AND ATE.ta_codigo LIKE ?
+					AND at_data_cadastro >= ? AND at_data_cadastro <= ?
+					ORDER BY 1 DESC
+				");
+	
+			try
+			{
+				$stmt = $this->conexao->prepare($query);
+					
+				$stmt->execute(array("{$dados[$this->sat_codigo]}",
+									 "{$dados[$this->ta_codigo]}",
+									 "{$dados['data1']}",
+									 "{$dados['data2']}"));
+					
+				return($stmt);
+					
+		} catch (PDOException $e)
+			{
+					throw new PDOException($e->getMessage(), $e->getCode());
+	}
+	
+	}
+	
+	#Listagem da tela principal de atendimento
 	public function listarBuscaAtendimento($dados)
 	{
 		
