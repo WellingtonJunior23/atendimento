@@ -81,7 +81,7 @@ echo "</div>";
 	
 				Processo:
 				<input type="text" name="at_processo" size="40" value="<?php echo($busca->getDados('at_processo')); ?>">
-				Medicamento:
+				Produto:
 				<input type="text" name="at_medicamento" size="65" value="<?php echo($busca->getDados('at_medicamento')); ?>">
 						
 		</td>
