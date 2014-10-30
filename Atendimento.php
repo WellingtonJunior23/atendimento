@@ -119,7 +119,7 @@ $datagrid->link2 = 'GerarRelatorioAtendimentoPdf.php';
 $datagrid->acao2 = 'gerarPDF';
 $datagrid->nomelink2 = '<img src="/atendimento/css/images/pdf.png" />';
 
-$datagrid->mostrarDatagrid();
+$datagrid->mostrarDatagrid(1);
 
 }catch (Exception $e)
 {

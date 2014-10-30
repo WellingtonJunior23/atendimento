@@ -118,7 +118,28 @@ $_SESSION['cadastrar/Atendimento'] = $tbAtendimento->getForm(base64_decode($_SES
       </td>
     </tr>
   </table>
-</fieldset>
+
 </form>
+<hr>
+  	<?php
+  	try
+  	{
+	  	$tbApontamento = new TbApontamento();
+	  	$tabela = $tbApontamento->listarApontamento($_SESSION['cadastrar/Atendimento']['at_codigo']);
+	
+	  	$cabecalho = array('Data do Apontamento','Data de Retorno','Atendente','Apontamento');
+	  	
+	  	$grid = new DataGrid($cabecalho, $tabela);
+	  	$grid->colunaoculta = 1;
+	  	$grid->titulofield = 'Apontamento(s)';
+	  	$grid->islink = false;
+	  	$grid->mostrarDatagrid(1);
+	  	
+  	}catch (Exception $e)
+  	{
+  		echo $e->getMessage();
+  	}
+  	?>
+</fieldset>
 
 <?php unset($_SESSION['cadastrar/Atendimento']);?>
