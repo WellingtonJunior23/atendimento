@@ -283,15 +283,22 @@ class Busca extends Dados
 		{
 			#Instancia da Tabela de Atendimento
 			$tbAtendimento = new TbAtendimento();
-				
+
+/* 			Removido o filtro
+ * 			$this->dados['at_descricao'] = ($this->dados['at_descricao_busca'] == '') ? '%' : $this->dados['at_descricao_busca']; */
+			
 			$this->dados['sat_codigo'] = ($this->dados['sat_codigo'] == '') ? '%' : $this->dados['sat_codigo'];
 			$this->dados['ta_codigo'] =  ($this->dados['ta_codigo_busca'] == '') ? '%' : $this->dados['ta_codigo_busca'];
 			$this->dados['usu_codigo'] = ($this->dados['usu_codigo'] == '') ? '%' : $this->dados['usu_codigo'];
 			$this->dados['td_codigo'] = ($this->dados['td_codigo'] == '') ? '%' : $this->dados['td_codigo'];
 			$this->dados['at_paciente'] = ($this->dados['at_paciente'] == '') ? '%' : $this->dados['at_paciente'];
-			$this->dados['at_descricao'] = ($this->dados['at_descricao_busca'] == '') ? '%' : $this->dados['at_descricao_busca'];	
+			
+			$this->dados['ttp_codigo'] = ($this->dados['ttp_codigo'] == '') ? '%' : $this->dados['ttp_codigo'];
+
+			$this->dados['at_localidade'] = ($this->dados['at_localidade'] == '') ? '0' : '1';
 
 			$this->dados['at_processo'] = ($this->dados['at_processo'] == '') ? '%' : $this->dados['at_processo'];
+
 			$this->dados['at_medicamento'] = ($this->dados['at_medicamento'] == '') ? '%' : $this->dados['at_medicamento'];	
 			
 			$this->dados['data1'] = ($this->dados['data1'] == '') ? $tbAtendimento->getMenorDataPendente() : ValidarDatas::dataBanco($this->dados['data1']);

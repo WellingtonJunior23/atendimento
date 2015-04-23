@@ -20,7 +20,7 @@ echo "</div>";
 <form action="" method="post">
 <fieldset>
 	<legend>Pesquisar Atendimento</legend>
-<table border="2">
+<table border="0">
  
 	<tr>	
 		<td nowrap="nowrap">
@@ -74,8 +74,7 @@ echo "</div>";
 		FormComponente::selectOption('ttp_codigo',$tbtipoprocesso->listarTipoProcessoAtivo(),true,$ttp_codigo);
 		?>
 		Atendimento Interno: 
-		 	<input type="checkbox" name="at_localidade" <?php $var = ($busca->getDados('at_localidade') == '') ? '' : 'checked="checked"'; 
-		 													echo $var; ?> > 
+		 	<input type="checkbox" id="at_localidade" name="at_localidade" <?php $var = ($busca->getDados('at_localidade') == '') ? '' : 'checked="checked"'; echo $var; ?> > 
 		
 		<td>
 				<input type="button" id="limparFiltros" name="limpar" value='Limpar Filtros' />

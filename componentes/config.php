@@ -5,6 +5,8 @@
  */
 session_start();
 
+date_default_timezone_set('America/Sao_Paulo');
+
 $_SESSION['projeto'] = 'atendimento';
 
 /*
@@ -28,6 +30,6 @@ $Projeto = 'atendimento';
 
 include_once 'autoload.php';
 
-date_default_timezone_set('America/Sao_Paulo');
+
 
 ?>

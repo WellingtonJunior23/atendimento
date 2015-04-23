@@ -23,6 +23,7 @@ include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/topo1.php
 
 <script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/FormularioAtendimento.js"></script>
 
+<script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/tabs.js"></script>
 
 <?php 
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/topo2.php");

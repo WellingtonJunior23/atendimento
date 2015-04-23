@@ -227,9 +227,12 @@ class TbUsuario extends Banco
 	#Lista usada na tela de Busca de Atendimento
 	public function listarUsuario()
 	{
-		$query = ("SELECT usu_codigo, concat(usu_nome,' ',usu_sobrenome)
-					FROM tb_usuario
-        		    WHERE usu_codigo != 1
+		$query = ("SELECT USU.usu_codigo, concat(USU.usu_nome,' ',USU.usu_sobrenome)
+					FROM tb_usuario AS USU
+					INNER JOIN tb_acesso AS ACE
+					ON USU.usu_codigo = ACE.usu_codigo
+        		    WHERE USU.usu_codigo != 1
+					AND ACE.ace_ativo = 'S'
 				");
 		
 		try 

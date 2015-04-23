@@ -129,18 +129,6 @@ class TbAtendimento extends Banco
 	#Listagem da tela principal de atendimento
 	public function listarTelaPrincial($dados)
 	{
-		/*
-		$query = ("SELECT ATE.at_codigo, date_format(at_data_cadastro,'%d/%m/%Y') AS at_data_cadastro,SAT.sat_descricao, 
-       					  TA.at_descricao, at_paciente, concat(USU.usu_nome,' ', USU.usu_sobrenome) 
-					FROM tb_atendimento AS ATE
-					INNER JOIN tb_status_atendimento AS SAT
-					ON ATE.sat_codigo = SAT.sat_codigo
-					INNER JOIN tb_tipo_atendimento AS TA
-					ON ATE.ta_codigo = TA.at_codigo
-					INNER JOIN tb_usuario AS USU
-					ON ATE.usu_codigo = USU.usu_codigo
-				");
-		*/
 		
 		$query = ("SELECT ATE.at_codigo, date_format(at_data_cadastro_real,'%d/%m/%Y %H:%i:%s') AS at_data_cadastro,
 						  date_format(at_data_retorno,'%d/%m/%Y') AS at_data_retorno, SAT.sat_descricao, 
@@ -159,12 +147,13 @@ class TbAtendimento extends Banco
 					AND ATE.usu_codigo LIKE ?
 					AND ATE.td_codigo LIKE ?
 					AND ATE.at_paciente LIKE ?
-					AND ATE.at_descricao LIKE ?
+					AND ATE.ttp_codigo LIKE ?
+					AND ATE.at_localidade = ?
 					AND ATE.at_processo LIKE ?
 					AND ATE.at_medicamento LIKE ?
 					AND at_data_retorno >= ? AND at_data_retorno <= ?
 					ORDER BY 1 DESC
-					LIMIT 500
+					LIMIT 500;
 				");
 		
 		try 
@@ -176,11 +165,12 @@ class TbAtendimento extends Banco
 								  "{$dados[$this->usu_codigo]}",
 								  "{$dados[$this->td_codigo]}",
 								  "%{$dados[$this->at_paciente]}%",
-								  "%{$dados[$this->at_descricao]}%",
+								  "%{$dados[$this->ttp_codigo]}%",
+								  "{$dados[$this->at_localidade]}",
 								  "%{$dados[$this->at_processo]}%",
 								  "%{$dados[$this->at_medicamento]}%",			
 					               "{$dados['data1']}",
-								  "{$dados['data2']}"));
+								   "{$dados['data2']}"));
 			
 			return($stmt);
 			

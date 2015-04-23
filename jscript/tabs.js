@@ -43,7 +43,7 @@ $direcionar("#limparFiltros").click(function(){
 	$direcionar("input[name='data1']").val("");
 	$direcionar("input[name='data2']").val("");
 	
-	$direcionar("checkbox[name='at_localidade']").val("");
+	$direcionar("#at_localidade").attr("checked",false);
 	
 	$direcionar("#informacao").show(1000).hide(1000);
 
