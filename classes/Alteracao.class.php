@@ -38,6 +38,8 @@ class Alteracao extends Dados
 
 			ValidarCampos::validarQtdCaracter($this->dados['ace_senha'],6,$_SESSION['config']['senha']);
 
+			$this->dados['ace_ativo'] = ($this->dados['ace_ativo'] == '') ? 'N' : 'S';
+			
 			$this->dados['ace_senha'] = Validacao::hashSenha($this->dados['ace_senha']);
 
 			$tbacesso = new TbAcesso();

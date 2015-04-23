@@ -108,13 +108,15 @@ class TbUsuario extends Banco
 	
 	public function selectUsuarios()
 	{
-		$query = ("SELECT usu_codigo, usu_nome, dep_descricao, tac_descricao
+		$query = ("SELECT a.usu_codigo, usu_nome, dep_descricao, tac_descricao, ACE.ace_ativo
 					FROM tb_usuario AS a
 					INNER JOIN tb_departamento AS b
 					ON a.dep_codigo = b.dep_codigo
 					INNER JOIN tb_tipo_acesso AS c
 					ON a.tac_codigo = c.tac_codigo
-        		    WHERE usu_codigo != 1
+					INNER JOIN tb_acesso AS ACE
+					ON ACE.usu_codigo = a.usu_codigo
+        		    WHERE a.usu_codigo != 1
 				");
 		
 		try 

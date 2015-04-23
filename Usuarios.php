@@ -15,7 +15,7 @@ Arquivo::includeForm();
 
 $tbusuario = new TbUsuario();
 
-$datagrid = new DataGrid(array($_SESSION['config']['usuario'],'Departamento','Tipo de Acesso'),$tbusuario->selectUsuarios());
+$datagrid = new DataGrid(array($_SESSION['config']['usuario'],'Departamento','Tipo de Acesso','Ativo'),$tbusuario->selectUsuarios());
 $datagrid->colunaoculta = 1;
 
 $datagrid->islink2 = true;
