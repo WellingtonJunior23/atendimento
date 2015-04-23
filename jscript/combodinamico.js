@@ -1,4 +1,3 @@
-
 var $listar = jQuery.noConflict();
 
 $listar(document).ready(function(){
@@ -27,4 +26,4 @@ $listar(document).ready(function(){
 		return false;
 	});		
 
-})(jQuery);
+});

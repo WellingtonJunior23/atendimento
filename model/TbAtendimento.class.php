@@ -20,6 +20,9 @@ class TbAtendimento extends Banco
 	private $at_data_cadastro_real = 'at_data_cadastro_real';
 	private $at_processo = 'at_processo';
 	private $at_medicamento = 'at_medicamento';
+	private $ttp_codigo = 'ttp_codigo';
+	private $at_cns = 'at_cns';
+	private $at_localidade = 'at_localidade';
 	
 	public function insert($dados)
 	{
@@ -27,8 +30,8 @@ class TbAtendimento extends Banco
 					($this->at_data_cadastro, $this->at_data_retorno, $this->at_paciente, $this->at_cpf,
 					$this->at_rg, $this->at_reclamante, $this->at_teletone, $this->ta_codigo,
 					$this->td_codigo, $this->sat_codigo, $this->at_descricao, $this->usu_codigo,
-					$this->at_processo, $this->at_medicamento)
-					VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+					$this->at_processo, $this->at_medicamento, $this->ttp_codigo, $this->at_cns, $this->at_localidade)
+					VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
 				   ");
 		
 		try 
@@ -49,7 +52,11 @@ class TbAtendimento extends Banco
 			$stmt->bindParam(11,$dados[$this->at_descricao],PDO::PARAM_STR);
 			$stmt->bindParam(12,$dados[$this->usu_codigo],PDO::PARAM_INT);
 			$stmt->bindParam(13,$dados[$this->at_processo],PDO::PARAM_STR);
-			$stmt->bindParam(14,$dados[$this->at_medicamento],PDO::PARAM_INT);									
+			$stmt->bindParam(14,$dados[$this->at_medicamento],PDO::PARAM_INT);
+			$stmt->bindParam(15,$dados[$this->ttp_codigo],PDO::PARAM_INT);
+			$stmt->bindParam(16,$dados[$this->at_cns],PDO::PARAM_STR);
+			$stmt->bindParam(17,$dados[$this->at_localidade],PDO::PARAM_STR);
+												
 
 			$stmt->execute();
 
@@ -79,7 +86,10 @@ class TbAtendimento extends Banco
 						$this->sat_codigo = ?, 
 						$this->at_descricao = ?,
 						$this->at_processo = ?,
-						$this->at_medicamento = ?
+						$this->at_medicamento = ?,
+						$this->ttp_codigo = ?,
+						$this->at_cns = ?,
+						$this->at_localidade = ?
 					WHERE $this->at_codigo = ?
 				   ");
 		
@@ -98,8 +108,11 @@ class TbAtendimento extends Banco
 			$stmt->bindParam(8,$dados[$this->sat_codigo],PDO::PARAM_INT);
 			$stmt->bindParam(9,$dados[$this->at_descricao],PDO::PARAM_STR);
 			$stmt->bindParam(10,$dados[$this->at_processo],PDO::PARAM_INT);			
-			$stmt->bindParam(11,$dados[$this->at_medicamento],PDO::PARAM_INT);			
-			$stmt->bindParam(12,$dados[$this->at_codigo],PDO::PARAM_INT);									
+			$stmt->bindParam(11,$dados[$this->at_medicamento],PDO::PARAM_INT);
+			$stmt->bindParam(12,$dados[$this->ttp_codigo],PDO::PARAM_INT);
+			$stmt->bindParam(13,$dados[$this->at_cns],PDO::PARAM_STR);
+			$stmt->bindParam(14,$dados[$this->at_localidade],PDO::PARAM_STR);
+			$stmt->bindParam(15,$dados[$this->at_codigo],PDO::PARAM_INT);									
 
 			$stmt->execute();
 

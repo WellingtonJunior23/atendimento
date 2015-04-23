@@ -590,6 +590,7 @@ class Alteracao extends Dados
 
 			//ValidarCampos::campoVazio($this->dados['at_reclamante'],'Reclamente');
 
+			$this->dados['at_localidade'] = ($this->dados['at_localidade'] == '') ? '0' : '1';
 
 
 			$this->dados['at_teletone'];
@@ -732,5 +733,30 @@ class Alteracao extends Dados
 	
 	}
 
+	public function alterarTipoProcesso()
+	{
+	
+		try{
+	
+			ValidarCampos::campoVazio($this->dados['ttp_descricao'],'Descrição');
+	
+			$this->dados['ttp_status'] = ($this->dados['ttp_status'] == '') ? '0' : '1';
+	
+			try{
+					
+				$tbTipoProcesso = new TbTipoProcesso();
+				$tbTipoProcesso->update($this->dados);
+	
+			} catch (PDOException $e){
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+	
+	
+		} catch (Exception $e){
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	
+	}
+	
 }
 ?>

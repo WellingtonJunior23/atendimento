@@ -6,7 +6,8 @@ $submit(function()
 	
 	$submit("form").submit(function() 
 	{
-		$submit("#novoteste").html("TESTE");
+		$submit("#novoteste").html("Processando Aguarde ...");
+		$submit("#button").hiden();
 
 		//alert("TESTE");
 		// ReadOnly em todos os inputs
@@ -29,4 +30,4 @@ $submit(function()
 			 }
 			
 	});		
-})(jQuery);
+});

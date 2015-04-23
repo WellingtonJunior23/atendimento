@@ -7,7 +7,7 @@
         <ul>
 			<li><a href="RelatorioTempoAtendimento.php">Tempo de Atendimento</a></li>
 			<li><a href="RelatorioAtendimentoStatus.php">Atendimento por Status</a></li>			
-			<li><a href="RelatorioTipoAtendimentoStatus.php">Tipo Atendimento</a></li>						
+			<li><a href="RelatorioTipoAtendimentoStatus.php">Tipo Atendimento</a></li>
 		</ul>
     </div>
 <!--FIM menu secundário da direita -->    

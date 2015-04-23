@@ -18,6 +18,7 @@ Arquivo::includeForm();
 
 Sessao::finalizarSessao();
 
+
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/menusecundario.php");
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/rodape.php");
 

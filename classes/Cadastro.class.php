@@ -618,6 +618,10 @@ class Cadastro extends Dados
 			ValidarCampos::campoVazio($this->dados['ta_codigo'],'Tipo de Atendimento');
 				
 			ValidarCampos::campoVazio($this->dados['td_codigo'],'Direcionar Para');
+			
+			ValidarCampos::campoVazio($this->dados['at_cns'],'CNS');
+			
+			ValidarCampos::campoVazio($this->dados['ttp_codigo'],'Tipo de Processo');
 
 			$this->dados['at_data_retorno'] = date('Y-m-d');
 				
@@ -626,7 +630,7 @@ class Cadastro extends Dados
 				
 			//ValidarCampos::campoVazio($this->dados['at_reclamante'],'Reclamente');
 
-
+			$this->dados['at_localidade'] = ($this->dados['at_localidade'] == '') ? '0' : '1';
 				
 			$this->dados['at_teletone'];
 
@@ -802,6 +806,31 @@ class Cadastro extends Dados
 					
 				$tbTipoApontamento = new TbTipoApontamento();
 				$tbTipoApontamento->insert($this->dados);
+	
+			} catch (PDOException $e){
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+	
+	
+		} catch (Exception $e){
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	
+	}
+	
+	public function cadastrarTipoProcesso()
+	{
+	
+		try{
+	
+			ValidarCampos::campoVazio($this->dados['ttp_descricao'],'Descrição');
+
+			$this->dados['ttp_status'] = ($this->dados['ttp_status'] == '') ? '0' : '1';
+	
+			try{
+					
+				$tbTipoProcesso = new TbTipoProcesso();
+				$tbTipoProcesso->insert($this->dados);
 	
 			} catch (PDOException $e){
 				throw new PDOException($e->getMessage(), $e->getCode());

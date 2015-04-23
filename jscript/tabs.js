@@ -1,6 +1,6 @@
 /*
 <!-- 
-   função para ativar a funcionalide
+   funï¿½ï¿½o para ativar a funcionalide
    das tabs.
  -->
 <script>
@@ -34,13 +34,16 @@ $direcionar("#limparFiltros").click(function(){
 	$direcionar("select[name='ta_codigo_busca']").val("");	
 	$direcionar("select[name='usu_codigo']").val("");
 	$direcionar("select[name='td_codigo']").val("");
-			
+	$direcionar("select[name='ttp_codigo']").val("");
+	
 	$direcionar("input[name='at_paciente']").val("");
 	$direcionar("input[name='at_descricao_busca']").val("");	
 	$direcionar("input[name='at_medicamento']").val("");
 	$direcionar("input[name='at_processo']").val("");
 	$direcionar("input[name='data1']").val("");
 	$direcionar("input[name='data2']").val("");
+	
+	$direcionar("checkbox[name='at_localidade']").val("");
 	
 	$direcionar("#informacao").show(1000).hide(1000);
 
@@ -84,5 +87,5 @@ $direcionar("#limparFiltros").click(function(){
 		return false;
 	});
 
-})(jQuery);
+});
 

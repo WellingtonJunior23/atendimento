@@ -516,7 +516,25 @@ class Busca extends Dados
 		throw new Exception($e->getMessage(),$e->getCode());
 		}
 	}
+
+	public function listarTipoProcesso()
+	{
 	
+		try{
+	
+			$tbTipoProcesso = new TbTipoProcesso();
+	
+			//$this->dados['at_codigo'] = ($this->dados['at_codigo'] == '') ? '%' : $this->dados['at_codigo'];
+	
+			#Pega o Resultado
+			$dados = $tbTipoProcesso->listarCadastroTipoProcesso();
+	
+			return($dados);
+	
+		} catch (Exception $e){
+			throw new Exception($e->getMessage(),$e->getCode());
+		}
+	}
 	
 }
 ?>

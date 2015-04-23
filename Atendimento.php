@@ -20,7 +20,7 @@ echo "</div>";
 <form action="" method="post">
 <fieldset>
 	<legend>Pesquisar Atendimento</legend>
-<table border="0">
+<table border="2">
  
 	<tr>	
 		<td nowrap="nowrap">
@@ -36,7 +36,8 @@ echo "</div>";
 			?> Atendente:<?php 
 			$tbusuario = new TbUsuario();
 			FormComponente::$name = 'TODOS';
-			FormComponente::selectOption('usu_codigo', $tbusuario->listarUsuario(),true,$busca->getDados('usu_codigo'));
+			$usu_codigo['usu_codigo'] = $busca->getDados('usu_codigo');
+			FormComponente::selectOption('usu_codigo', $tbusuario->listarUsuario(),true,$usu_codigo);
 			?> 
 		</td>
 				
@@ -65,8 +66,17 @@ echo "</div>";
 	
 				Paciente:
 				<input type="text" name="at_paciente" size="40" value="<?php echo($busca->getDados('at_paciente')); ?>">
-				Descrição:
-				<input type="text" name="at_descricao_busca" size="65" value="<?php echo($busca->getDados('at_descricao_busca')); ?>">
+				Tipo de Processo:
+	<?php 
+		$tbtipoprocesso = new TbTipoProcesso();
+		FormComponente::$name = 'TODOS';
+		$ttp_codigo['ttp_codigo'] = $busca->getDados('ttp_codigo');
+		FormComponente::selectOption('ttp_codigo',$tbtipoprocesso->listarTipoProcessoAtivo(),true,$ttp_codigo);
+		?>
+		Atendimento Interno: 
+		 	<input type="checkbox" name="at_localidade" <?php $var = ($busca->getDados('at_localidade') == '') ? '' : 'checked="checked"'; 
+		 													echo $var; ?> > 
+		
 		<td>
 				<input type="button" id="limparFiltros" name="limpar" value='Limpar Filtros' />
 				

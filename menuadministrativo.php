@@ -11,6 +11,7 @@
 			<li><a href="TipoAtendimento.php">Tipo Atendimento</a></li>						
 			<li><a href="TipoResposta.php">Tipo Resposta</a></li>									
 			<li><a href="TipoApontamento.php">Tipo Apontamento</a></li>												
+			<li><a href="TipoProcesso.php">Tipo Processo</a></li>												
 			<!-- 
 			<li><a href="Tempo.php"><img src='./css/images/tempo.png'> Tempo</a></li>			
 			<li><a href="Prioridades.php"><img src='./css/images/prioridade.png'> Prioridade</a></li>

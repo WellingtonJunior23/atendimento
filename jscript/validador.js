@@ -1,26 +1,27 @@
 /**
- * maxlength( length ): Máximo de caracteres
+ * maxlength( length ): Mï¿½ximo de caracteres
 rangelength( range ): Faz com que o elemento requer um intervalo de valores dado
-max( value ): Valor máximo permitido
-url( ): URL válida
-date( ): Data válida
-dateISO( ): Data ISO válida
-number( ): Campo numérico
-digits( ): Só aceita dígitos
-creditcard( ): Um número de cartão de crédito
-equalTo( other ): igual à um determinado valor
+max( value ): Valor mï¿½ximo permitido
+url( ): URL vï¿½lida
+date( ): Data vï¿½lida
+dateISO( ): Data ISO vï¿½lida
+number( ): Campo numï¿½rico
+digits( ): Sï¿½ aceita dï¿½gitos
+creditcard( ): Um nï¿½mero de cartï¿½o de crï¿½dito
+equalTo( other ): igual ï¿½ um determinado valor
  */
 
 var $valida = jQuery.noConflict();
 
 
 var usuario  = 'Utilizador';
-var problema = 'Serviço';
-var ramal = 'Extensão';
+var problema = 'Serviï¿½o';
+var ramal = 'Extensï¿½o';
 var senha = 'Palavra-passe';
+var obrigatorio = '&eacute; obrigat&oacute;rio';
 
 /*
-var usuario  = 'Usuário';
+var usuario  = 'Usuï¿½rio';
 var problema = 'Problema';
 var ramal = 'Ramal';
 var senha = 'Senha';
@@ -30,24 +31,24 @@ $valida(document).ready( function()
 {
 	
 	$valida("#meuproblema").validate({
-		/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+		/* REGRAS DE VALIDAï¿½ï¿½O DO FORMULï¿½RIO */
 		rules:{
 			pro_descricao:{
-				required: true, /* Campo obrigatório */
-				minlength: 5    /* No mínimo 5 caracteres */
+				required: true, /* Campo obrigatï¿½rio */
+				minlength: 5    /* No mï¿½nimo 5 caracteres */
 			},
 			dep_codigo_problema:{
 				required: true
 			}
 		},
-		/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+		/* DEFINIï¿½ï¿½O DAS MENSAGENS DE ERRO */
 		messages:{
 			pro_descricao:{
 				required: "Preencha o campo <u>" +problema+ "</u>",
-				minlength: "O campo <u>" +problema+ "</u> deve conter no mínimo 5 caracteres"
+				minlength: "O campo <u>" +problema+ "</u> deve conter no mï¿½nimo 5 caracteres"
 			},
 			dep_codigo_problema:{
-				required: "Campo Departamento é Obrigadorio"
+				required: "Campo Departamento ï¿½ Obrigadorio"
 			}
 		}
 	});
@@ -56,8 +57,8 @@ $valida(document).ready( function()
 
 		rules:{
 			pro_titulo:{
-				required: true, /* Campo obrigatório */
-				minlength: 5    /* No mínimo 5 caracteres */
+				required: true, /* Campo obrigatï¿½rio */
+				minlength: 5    /* No mï¿½nimo 5 caracteres */
 			},
 			pro_descricao:{
 				required: true
@@ -66,17 +67,17 @@ $valida(document).ready( function()
 		messages:{
 			pro_titulo:{
 				required: "Preencha o campo <u>Titulo</u>",
-				minlength: "O campo <u>Projeto</u> deve conter no mínimo 5 caracteres"
+				minlength: "O campo <u>Projeto</u> deve conter no mï¿½nimo 5 caracteres"
 			},
 			pro_descricao:{
-				required: "Campo Descrição do projeto é Obrigadorio"
+				required: "Campo Descriï¿½ï¿½o do projeto ï¿½ Obrigadorio"
 			}
 		}
 	});
 	
-		/*Inicio de validação do formulário de solicitacao*/
+		/*Inicio de validaï¿½ï¿½o do formulï¿½rio de solicitacao*/
 		$valida("#solicitacao").validate({
-			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			/* REGRAS DE VALIDAï¿½ï¿½O DO FORMULï¿½RIO */
 			rules:{
 				dep_codigo:{
 					required: true
@@ -89,25 +90,25 @@ $valida(document).ready( function()
 					minlength: 20
 				}
 			},
-			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			/* DEFINIï¿½ï¿½O DAS MENSAGENS DE ERRO */
 			messages:{
 				dep_codigo:{
-					required: "O campo departamento é obrigatório"
+					required: "O campo departamento ï¿½ obrigatï¿½rio"
 				},
 				pro_codigo:{
-					required: "O campo " +problema+ " é obrigatório"
+					required: "O campo " +problema+ " ï¿½ obrigatï¿½rio"
 				},
 				sol_descricao_solicitacao:{
-					required: "O campo Descrição do " +problema+ " é obrigatório",
-					minlength: "O campo Descrição do " +problema+ " precisa de ao menos 20 caracteres"
+					required: "O campo Descriï¿½ï¿½o do " +problema+ " ï¿½ obrigatï¿½rio",
+					minlength: "O campo Descriï¿½ï¿½o do " +problema+ " precisa de ao menos 20 caracteres"
 				}
 			}
 		});
-		/*Fim de validação do formulário de solicitacao*/
+		/*Fim de validaï¿½ï¿½o do formulï¿½rio de solicitacao*/
 			
-		/*Inicio de validação do formulário de Atendimento*/
+		/*Inicio de validaï¿½ï¿½o do formulï¿½rio de Atendimento*/
 		$valida("#Atendimento").validate({
-			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			/* REGRAS DE VALIDAï¿½ï¿½O DO FORMULï¿½RIO */
 			rules:{
 				at_data_cadastro:{
 					required: true
@@ -125,36 +126,48 @@ $valida(document).ready( function()
 				},	
 				td_codigo:{
 					required: true
+				},
+				at_cns: {
+					required: true
+				},
+				ttp_codigo:{
+					required: true
 				}
 				
 			},
-			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			/* DEFINIï¿½ï¿½O DAS MENSAGENS DE ERRO */
 			messages:{
 				at_data_cadastro:{
-					required: "O campo [Data da Ocorrência] é obrigatório."
+					required: "O campo [Data da Ocorrï¿½ncia] "+obrigatorio
 				},
 				at_paciente:{
-					required: "O campo [Paciente] é obrigatório.",
+					required: "O campo [Paciente]  "+obrigatorio,
 					minlength: "O campo [Paciente] precisa de ao menos 3 caracteres."
 				},
 				at_descricao:{
-					required: "O campo [Descrição do Atendimento] é obrigatório.",
-					minlength: "O campo [Descrição do Atendimento] precisa de ao menos 20 caracteres."
+					required: "O campo [Descri&ccedil;&atilde;o do Atendimento] "+obrigatorio,
+					minlength: "O campo [Descri&ccedil;&atilde;o do Atendimento] precisa de ao menos 20 caracteres."
 				},
 				ta_codigo:{
-					required: "O campo [Tipo de Atendimento] é Obrigatório."
+					required: "O campo [Tipo de Atendimento] "+obrigatorio
 				},
 				td_codigo:{
-					required: "O campo [Direcionar Para] é obrigatório."
+					required: "O campo [Direcionar Para] "+obrigatorio
+				},
+				at_cns:{
+					required: "O campo [CNS] "+obrigatorio
+				},
+				ttp_codigo:{
+					required: "O campo [Tipo de Processo] "+obrigatorio
 				}
 			}
 		});
-		/*Fim de validação do formulário de Atendimento*/
+		/*Fim de validaï¿½ï¿½o do formulï¿½rio de Atendimento*/
 		
 		
 		
 		$valida("#Apontamento").validate({
-			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			/* REGRAS DE VALIDAï¿½ï¿½O DO FORMULï¿½RIO */
 			rules:{
 				teste:{
 					required: true
@@ -167,26 +180,26 @@ $valida(document).ready( function()
 					minlength: 20
 				}
 			},
-			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			/* DEFINIï¿½ï¿½O DAS MENSAGENS DE ERRO */
 			messages:{
 				ap_descricao:{
-					required: "O campo descrição é obrigatório."
+					required: "O campo descriï¿½ï¿½o ï¿½ obrigatï¿½rio."
 				},
 				pro_codigo:{
-					required: "O campo " +problema+ " é obrigatório."
+					required: "O campo " +problema+ " ï¿½ obrigatï¿½rio."
 				},
 				ap_descricao:{
-					required: "O campo [Descrição] é obrigatório.",
-					minlength: "O campo [Descrição] precisa de ao menos 20 caracteres."
+					required: "O campo [Descriï¿½ï¿½o] ï¿½ obrigatï¿½rio.",
+					minlength: "O campo [Descriï¿½ï¿½o] precisa de ao menos 20 caracteres."
 				}
 			}
 		});
-		/*Fim de validação do formulário de Apontamento*/
+		/*Fim de validaï¿½ï¿½o do formulï¿½rio de Apontamento*/
 		
 		
-		/* Validação de formulário do Departamento*/
+		/* Validaï¿½ï¿½o de formulï¿½rio do Departamento*/
 		$valida("#departamento").validate({
-			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			/* REGRAS DE VALIDAï¿½ï¿½O DO FORMULï¿½RIO */
 			rules:{
 				dep_descricao:{
 					required: true
@@ -199,20 +212,20 @@ $valida(document).ready( function()
 					minlength: 20
 				}
 			},
-			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			/* DEFINIï¿½ï¿½O DAS MENSAGENS DE ERRO */
 			messages:{
 				dep_descricao:{
-					required: "O campo descrição é obrigatório"
+					required: "O campo descriï¿½ï¿½o ï¿½ obrigatï¿½rio"
 				},
 				pro_codigo:{
-					required: "O campo " +problema+ " é obrigatório"
+					required: "O campo " +problema+ " ï¿½ obrigatï¿½rio"
 				},
 				ap_descricao:{
-					required: "O campo [Descrição] é obrigatório",
-					minlength: "O campo [Descrição] precisa de ao menos 20 caracteres"
+					required: "O campo [Descriï¿½ï¿½o] ï¿½ obrigatï¿½rio",
+					minlength: "O campo [Descriï¿½ï¿½o] precisa de ao menos 20 caracteres"
 				}
 			}
 		});
-		/*Fim de validação do formulário de Apontamento*/
+		/*Fim de validaï¿½ï¿½o do formulï¿½rio de Apontamento*/
 		
-})(jQuery);
+});

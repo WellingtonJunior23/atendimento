@@ -66,6 +66,14 @@ $_SESSION['pdf/Atendimento'] = $busca->getRelatorioAtendimentoPDF();
 		<?php echo($_SESSION['pdf/Atendimento']['at_rg']); ?>
       </td>
     </tr> 
+    
+    <tr>
+      <th width="119" align="left" nowrap="nowrap">CNS:</th>
+      <td>
+		<?php echo($_SESSION['pdf/Atendimento']['at_cns']); ?>
+      </td>
+    </tr> 
+    
     <tr>
       <th width="119" align="left" nowrap="nowrap">Reclamante:</th>
       <td>
@@ -79,7 +87,18 @@ $_SESSION['pdf/Atendimento'] = $busca->getRelatorioAtendimentoPDF();
       </td>
     </tr>
 
-        <tr>
+    <tr>
+      <th width="119" align="left" nowrap="nowrap">Tipo de Processo:</th>
+      <td>
+		<?php 
+		$tbtipoprocesso = new TbTipoProcesso();
+		echo $tbtipoprocesso->getDescricao($_SESSION['pdf/Atendimento']['ttp_codigo']);
+		?>
+      </td>
+    </tr>
+    
+    
+    <tr>
       <th width="119" align="left" nowrap="nowrap">Processo / Protocolo:</th>
       <td>
 		<?php echo($_SESSION['pdf/Atendimento']['at_processo']); ?>
@@ -123,6 +142,14 @@ $_SESSION['pdf/Atendimento'] = $busca->getRelatorioAtendimentoPDF();
 	      	<?php echo($_SESSION['pdf/Atendimento']['at_descricao']); ?>
 	      </td>
     </tr>
+    
+    <tr>
+      <th align="left" nowrap="nowrap">Atendimento Interno:</th>
+	      <td>
+		 	<?php echo ($_SESSION['pdf/Atendimento']['at_localidade'] == '1') ? 'SIM' : 'NÃO'; ?> 
+	      </td>
+    </tr>
+    
 
   </table>
 </fieldset>

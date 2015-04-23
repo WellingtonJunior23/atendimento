@@ -37,6 +37,13 @@ Sessao::validarForm('cadastrar/Atendimento');
       </td>
     </tr> 
     <tr>
+      <th width="119" align="left" nowrap="nowrap">CNS:</th>
+      <td>
+		<input type="text" name="at_cns" value="<?php echo($_SESSION['cadastrar/Atendimento']['at_cns']); ?>">
+      </td>
+    </tr> 
+    
+    <tr>
       <th width="119" align="left" nowrap="nowrap">Reclamante:</th>
       <td>
 		<input type="text" name="at_reclamante" size="60" value="<?php echo($_SESSION['cadastrar/Atendimento']['at_reclamante']); ?>">
@@ -48,6 +55,17 @@ Sessao::validarForm('cadastrar/Atendimento');
 		<input type="text" name="at_teletone" value="<?php echo($_SESSION['cadastrar/Atendimento']['at_teletone']); ?>">
       </td>
     </tr> 
+    
+    <tr>
+      <th width="119" align="left" nowrap="nowrap">Tipo de Processo:</th>
+      <td>
+		<?php 
+		$tbtipoprocesso = new TbTipoProcesso();
+		FormComponente::$name = 'Selecione';
+		FormComponente::selectOption('ttp_codigo',$tbtipoprocesso->listarTipoProcessoAtivo(),true,$_SESSION['cadastrar/Atendimento']);
+		?>
+      </td>
+    </tr>
     
     <tr>
       <th width="119" align="left" nowrap="nowrap">Processo / Protocolo:</th>
@@ -101,6 +119,21 @@ Sessao::validarForm('cadastrar/Atendimento');
 	      	<textarea name="at_descricao" id="areatexto" rows="10" cols="50"><?php echo($_SESSION['cadastrar/Atendimento']['at_descricao']); ?></textarea>
 	      </td>
     </tr>
+    
+    <tr>
+      <th align="left" nowrap="nowrap">Atendimento Interno:</th>
+	      <td>
+		 	<input type="checkbox" name="at_localidade"> 
+	      </td>
+    </tr>
+   
+   <tr>
+      <th align="left" nowrap="nowrap"></th>
+	      <td>
+	      &emsp;
+	      </td>
+    </tr>
+   
     
     <tr>
       <td colspan="2" align="left">

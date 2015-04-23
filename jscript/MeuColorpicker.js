@@ -69,4 +69,4 @@ $pick(document).ready(function() {
 
 		});
 	
-	})(jQuery);
+	});

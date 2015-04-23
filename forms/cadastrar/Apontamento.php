@@ -45,7 +45,16 @@ $_SESSION['cadastrar/Atendimento'] = $tbAtendimento->getForm(base64_decode($_SES
       <td>
 		<input type="text" name="at_rg" class="rg" value="<?php echo($_SESSION['cadastrar/Atendimento']['at_rg']); ?>">
       </td>
+    </tr>
+    
+    <tr>
+      <th width="119" align="left" nowrap="nowrap">CNS:</th>
+      <td>
+		<input type="text" name="at_cns" value="<?php echo($_SESSION['cadastrar/Atendimento']['at_cns']); ?>">
+      </td>
     </tr> 
+    
+     
     <tr>
       <th width="119" align="left" nowrap="nowrap">Reclamante:</th>
       <td>
@@ -59,7 +68,18 @@ $_SESSION['cadastrar/Atendimento'] = $tbAtendimento->getForm(base64_decode($_SES
       </td>
     </tr>
     
-        <tr>
+    <tr>
+      <th width="119" align="left" nowrap="nowrap">Tipo de Processo:</th>
+      <td>
+		<?php 
+		$tbtipoprocesso = new TbTipoProcesso();
+		FormComponente::$name = 'Selecione';
+		FormComponente::selectOption('ttp_codigo',$tbtipoprocesso->listarTipoProcessoAtivo(),true,$_SESSION['cadastrar/Atendimento']);
+		?>
+      </td>
+    </tr>
+    
+    <tr>
       <th width="119" align="left" nowrap="nowrap">Processo / Protocolo:</th>
       <td>
 		<input type="text" name="at_processo" value="<?php echo($_SESSION['cadastrar/Atendimento']['at_processo']); ?>">
@@ -95,6 +115,20 @@ $_SESSION['cadastrar/Atendimento'] = $tbAtendimento->getForm(base64_decode($_SES
       <th align="left" nowrap="nowrap">Descrição do Atendimento:</th>
 	      <td>
 	      	<textarea name="at_descricao" rows="10" cols="50"><?php echo($_SESSION['cadastrar/Atendimento']['at_descricao']); ?></textarea>
+	      </td>
+    </tr>
+    
+    <tr>
+      <th align="left" nowrap="nowrap">Atendimento Interno:</th>
+	      <td>
+		 	<input type="checkbox" name="at_localidade" <?php echo ($_SESSION['cadastrar/Atendimento']['at_localidade'] == '1') ? 'checked="checked"' : ''; ?> > 
+	      </td>
+    </tr>
+   
+   <tr>
+      <th align="left" nowrap="nowrap"></th>
+	      <td>
+	      &emsp;
 	      </td>
     </tr>
 
