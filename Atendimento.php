@@ -8,7 +8,9 @@ include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/script.ph
 
 $busca = new Busca();
 
-$busca->validarPost($_POST);
+
+$busca->setDados($_POST);
+
 
 echo"<div class='sub_menu_principal'>";
 echo FormComponente::actionButton('<img src="./css/images/addchamado.png" title="Novo Atendimento"  >','cadastrar/Atendimento');
@@ -112,10 +114,7 @@ try
 	
 $cabecalho = array('Protocolo','Data do Atendimento','Data de Retorno','Status','Tipo Atendimento','Paciente','Atendente');
 
-$dados = $busca->listarAtendimento();
-
-
-$datagrid = new DataGrid($cabecalho,$dados);
+$datagrid = new DataGrid($cabecalho,$busca->listarAtendimento());
 
 	$botao = ('<a href="./GerarExcel.php"><img src="./css/images/excel.png" title="Exportar Excel"></a>');
 

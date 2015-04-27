@@ -283,7 +283,8 @@ class Busca extends Dados
 		{
 			#Instancia da Tabela de Atendimento
 			$tbAtendimento = new TbAtendimento();
-
+			
+			
 /* 			Removido o filtro
  * 			$this->dados['at_descricao'] = ($this->dados['at_descricao_busca'] == '') ? '%' : $this->dados['at_descricao_busca']; */
 			
