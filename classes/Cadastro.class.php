@@ -619,7 +619,8 @@ class Cadastro extends Dados
 				
 			ValidarCampos::campoVazio($this->dados['td_codigo'],'Direcionar Para');
 			
-			ValidarCampos::campoVazio($this->dados['at_cns'],'CNS');
+			#Removido obrigar o CNS (Juliana)
+			//ValidarCampos::campoVazio($this->dados['at_cns'],'CNS');
 			
 			ValidarCampos::campoVazio($this->dados['ttp_codigo'],'Tipo de Processo');
 

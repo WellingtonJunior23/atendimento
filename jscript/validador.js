@@ -127,9 +127,6 @@ $valida(document).ready( function()
 				td_codigo:{
 					required: true
 				},
-				at_cns: {
-					required: true
-				},
 				ttp_codigo:{
 					required: true
 				}
@@ -153,9 +150,6 @@ $valida(document).ready( function()
 				},
 				td_codigo:{
 					required: "O campo [Direcionar Para] "+obrigatorio
-				},
-				at_cns:{
-					required: "O campo [CNS] "+obrigatorio
 				},
 				ttp_codigo:{
 					required: "O campo [Tipo de Processo] "+obrigatorio
