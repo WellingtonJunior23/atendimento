@@ -9,21 +9,22 @@
 
 
 #nav {
-	/* background: url('images/nav/nav_bg.png') repeat-x; 
+	/* background: url('images/nav/nav_bg.png') repeat-x; */
 	background-color: #5D81B1;
-	*/
-		background-color: #FF3030;
+	
+		/*background-color: #FF3030;
 		/*#FF3030
 		*/
 	/* background: url('images/banner1.jpg') repeat-x; */
 	/*Chrome*/
 	/* background: -webkit-gradient(linear, left top, left bottom, from(#5D81B1), to(#5D81B1)) repeat-X; */
 
-	 /*Homologação
+	 
 	 background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#32CD32), to(#32CD32), color-stop(.6,#228B22));
-	 */
+	 
+	 /*Homologação
 	 background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF3030), to(#FF3030), color-stop(.6,#FF3030));
-
+	*/
 	/*Mozila*/
 /*	background: -moz-linear-gradient(top, #666, #fff) repeat-X; */
 
@@ -47,12 +48,12 @@
 	/* background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666666), to(#666666), color-stop(.6,#333)); 
 	background: url("images/banner1.jpg"); */
 	
-	/*
-		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#32CD32), to(#32CD32), color-stop(.6,#228B22));
-	*/
 	
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#32CD32), to(#32CD32), color-stop(.6,#228B22));
+	
+/*Homolog	
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF3030), to(#FF3030), color-stop(.6,#FF3030));
-	
+	*/
 	background-color: #FF3030;
 	/* Homologação: 	background-color: #32CD32;*/
 	float: left;
@@ -69,11 +70,13 @@
 
 	color: #CFCFCF;
 	/* background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5D81B1), to(#5D81B1), color-stop(.6,#333)); */
+
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#228B22), to(#228B22), color-stop(.6,#32CD32));
+
 /*
 Homologação:
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#228B22), to(#228B22), color-stop(.6,#32CD32));
-*/
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF3030), to(#FF3030), color-stop(.6,#FF3030));
+	*/
 	background-color: #FF3030;
 	color: #E8E8E8;
 	/* background: #000 url('images/nav/nav_hover.png') repeat-x; */
