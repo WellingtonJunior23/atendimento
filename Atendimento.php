@@ -8,8 +8,8 @@ include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/script.ph
 
 $busca = new Busca();
 
-
-$busca->setDados($_POST);
+#Validar os dados e guarda a digitacao nos forms
+$busca->validarPost($_POST);
 
 
 echo"<div class='sub_menu_principal'>";
